@@ -30,3 +30,7 @@ button {
 .clip-rect-0 {
     clip: rect(0, 0, 0, 0);
 }
+
+.link {
+    text-decoration: none;
+}
