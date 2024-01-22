@@ -1,7 +1,13 @@
 import rough from "roughjs";
-import { Tools, ElementType } from "../types";
+import { Tools, ToolsType } from "../types";
 
-export const createElement = ( { id, x1, y1, x2, y2, type }: ElementType ) => {
+export const createElement = ( 
+  id:number, 
+  x1:number, 
+  y1:number, 
+  x2:number, 
+  y2:number, 
+  type:ToolsType) => {
   const generator = rough.generator();
   switch (type) {
     case Tools.line:
