@@ -5,7 +5,7 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 
-const Info = () => {
+export const Info = () => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -92,5 +92,3 @@ const Info = () => {
     </div>
   );
 }
-
-export default Info;

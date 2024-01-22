@@ -16,7 +16,7 @@ type ControlPanelProps = {
   setScale: (scale: number) => void;
 };
 
-const ControlPanel = ({
+export const ControlPanel = ({
   undo,
   redo,
   onZoom,
@@ -69,5 +69,3 @@ const ControlPanel = ({
     </>
   );
 }
-
-export default ControlPanel;

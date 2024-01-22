@@ -10,7 +10,7 @@ type ActionBarProps = {
   setTool: (tool: ToolsType) => void;
 };
 
-const ActionBar = ({ tool, setTool }: ActionBarProps) => {
+export const ActionBar = ({ tool, setTool }: ActionBarProps) => {
   return (
     <div className="fixed top-[20px] p-[10px] z-2 flex left-[50%] gap-[20px] justify-normal bg-primary_bg_color rounded-[10px] border-solid border-[1px] border-border_color actionBar">
       {Object.values(Tools).map((t, index) => (
@@ -38,5 +38,3 @@ const ActionBar = ({ tool, setTool }: ActionBarProps) => {
     </div>
   );
 }
-
-export default ActionBar;
