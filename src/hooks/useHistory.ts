@@ -9,8 +9,7 @@ export const useHistory = (initialState: ElementType[]) => {
     action: ElementType[] | ((current: ElementType[]) => ElementType[]),
     overwrite = false
   ) => {
-    const newState =
-      typeof action === "function" ? action(history[index]) : action;
+    const newState = typeof action === "function" ? action(history[index]) : action;
     if (overwrite) {
       const historyCopy = [...history];
       historyCopy[index] = newState;
