@@ -5,17 +5,17 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 
-export const Info = () => {
+export function Info() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div>
+    <div className="relative">
       <button
-        className="z-2 absolute top-[20px] right-[20px] p-[10px] bg-primary *:text-primary_bg_color rounded-[8px] hover:bg-primary_hover transition duration-400 ease-in-out border-none"
+        className="z-20 absolute top-[20px] right-[20px] p-2 rounded-lg border-none bg-primary transition duration-300 hover:bg-primary-hover"
         aria-label="Open information dialog"
         onClick={() => setOpen(true)}
       >
-        <BsQuestionCircle />
+        <BsQuestionCircle className="text-primary-bg-color" />
       </button>
       <Dialog
         onClose={() => setOpen(false)}
@@ -30,7 +30,7 @@ export const Info = () => {
         <DialogTitle
           sx={{ m: 0, p: 2 }}
           id="customized-dialog-title"
-          className="text-cerner bg-primary text-primary_bg_color"
+          className="DialogTitle bg-primary text-primary-bg-color text-center"
         >
           How to Use DragNdraw
         </DialogTitle>
@@ -43,50 +43,45 @@ export const Info = () => {
             top: 8,
             color: (theme) => theme.palette.grey[500],
           }}
-          className="absolute top-[8px] right-[8px]"
+          className="IconButton"
         >
-          <CloseIcon className="text-primary_bg_color" />
+          <CloseIcon className="CloseIcon text-primary-bg-color" />
         </IconButton>
-        <div className="p-[20px] text-primary_text_color max-w-[500px] leading-6">
+        <div className="infoContent p-4 max-w-500 line-height-6 text-primary-text-color">
           <p className="font-bold">Welcome to DragNdraw! Get started with these simple steps:</p>
-          <ul className="list-style-none mt-[10px] mb-[20px] mx-0">
-            <li className="mb-[10px]">
-              <strong className="font-bold text-primary">Choose a Tool:</strong> Select from pencil, line,
-              rectangle, or text tools to start drawing.
+          <ul className="list-none my-2">
+            <li>
+              <strong className="text-primary">Choose a Tool:</strong> Select from pencil, line, rectangle, or text tools to start drawing.
             </li>
-            <li className="mb-[10px]">
-              <strong className="font-bold text-primary">Draw & Move:</strong> Click and drag on the canvas to
-              draw. Select an element and drag to move.
+            <li>
+              <strong className="text-primary">Draw & Move:</strong> Click and drag on the canvas to draw. Select an element and drag to move.
             </li>
-            <li className="mb-[10px]">
-              <strong className="font-bold text-primary">Edit Text:</strong> Select the text tool and click on the
-              canvas to start typing.
+            <li>
+              <strong className="text-primary">Edit Text:</strong> Select the text tool and click on the canvas to start typing.
             </li>
-            <li className="mb-[10px]">
-              <strong className="font-bold text-primary">Zoom:</strong> Use Ctrl + Scroll to zoom in and out of the
-              canvas.
+            <li>
+              <strong className="text-primary">Zoom:</strong> Use Ctrl + Scroll to zoom in and out of the canvas.
             </li>
-            <li className="mb-[10px]">
-              <strong className="font-bold text-primary">Pan:</strong> Hold Space and drag to move around the
-              canvas, or hold the middle mouse button.
+            <li>
+              <strong className="text-primary">Pan:</strong> Hold Space and drag to move around the canvas, or hold the middle mouse button.
             </li>
           </ul>
           <p className="font-bold">Keyboard Shortcuts:</p>
-          <ul className="list-style-none mt-[10px] mb-[20px] mx-0">
-            <li className="mb-[10px]">
-              <strong className="font-bold text-primary">Undo:</strong> Ctrl + Z
+          <ul className="list-none my-2">
+            <li>
+              <strong className="text-primary">Undo:</strong> Ctrl + Z
             </li>
-            <li className="mb-[10px]">
-              <strong className="font-bold text-primary">Redo:</strong> Ctrl + Y or Ctrl + Shift + Z
+            <li>
+              <strong className="text-primary">Redo:</strong> Ctrl + Y or Ctrl + Shift + Z
             </li>
-            <li className="mb-[10px]">
-              <strong className="font-bold text-primary">Zoom In:</strong> Ctrl + Plus
+            <li>
+              <strong className="text-primary">Zoom In:</strong> Ctrl + Plus
             </li>
-            <li className="mb-[10px]">
-              <strong className="font-bold text-primary">Zoom Out:</strong> Ctrl + Minus
+            <li>
+              <strong className="text-primary">Zoom Out:</strong> Ctrl + Minus
             </li>
           </ul>
-          <p className="font-bold">Enjoy creating your masterpiece!</p>
+          <p className="mb-2">Enjoy creating your masterpiece!</p>
         </div>
       </Dialog>
     </div>

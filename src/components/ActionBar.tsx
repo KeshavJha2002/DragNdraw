@@ -1,38 +1,47 @@
-import { Tools, ToolsType } from "../types"
+import { Tools, ToolsType } from "../types";
+
 import { LuMousePointer, LuPencil } from "react-icons/lu";
 import { FiSquare } from "react-icons/fi";
 import { IoText } from "react-icons/io5";
 import { PiMinusBold } from "react-icons/pi";
-import "./action-bar-style.css";
 
 type ActionBarProps = {
   tool: ToolsType;
   setTool: (tool: ToolsType) => void;
 };
 
-export const ActionBar = ({ tool, setTool }: ActionBarProps) => {
+export function ActionBar({ tool, setTool }: ActionBarProps) {
   return (
-    <div className="fixed top-[20px] p-[10px] z-2 flex left-[50%] gap-[20px] justify-normal bg-primary_bg_color rounded-[10px] border-solid border-[1px] border-border_color actionBar">
+    <div className="fixed top-[20px] left-1/2 transform -translate-x-1/2 z-20 p-[0.3rem] bg-primary-bg-color rounded-lg border border-border-color shadow-md flex gap-2 justify-center">
       {Object.values(Tools).map((t, index) => (
         <div
-          className={`relative cursor-pointer rounded-[5px] p-[10px] border-solid border-[1px] border-transparent bg-primary_bg_color transition-all duration-400 ease-in-out hover:bg-secondary_bg_color ${tool === t ? "bg-selected_bg_color" : ""}`} 
+          className={`cursor-pointer relative rounded-md border text-[1rem] border-transparent p-3 bg-primary-bg-color transition duration-300  ${
+            tool === t ? "bg-selected-bg-color" : "hover:bg-secondary-bg-color"
+          }`}
           key={t}
           onClick={() => setTool(t)}
-        > 
-          <input className="cursor-pointer w-[20px] h-[20px] absolute opacity-0"
+        >
+          <input
             type="radio"
             id={t}
             checked={tool === t}
             onChange={() => setTool(t)}
             readOnly
+            className="cursor-pointer w-3 h-3 absolute opacity-0"
           />
-          <label htmlFor={t} className="cursor-pointer absolute w-[1px] h-[1px] -m-[1px] p-[0] overflow-hidden border-0 clip-rect-0 whitespace-nowrap">{t}</label>
-          {t === "selection" && <LuMousePointer />}
-          {t === "rectangle" && <FiSquare />}
-          {t === "line" && <PiMinusBold />}
-          {t === "pencil" && <LuPencil />}
-          {t === "text" && <IoText />}
-          <span className={`absolute right-[3px] bottom-[0px] text-[0.7em] text-secondary_text_color ${tool === t ? "text-highlight_color" : ""}`}>{index + 1}</span>
+          <label
+            htmlFor={t}
+            className="cursor-pointer absolute w-1 h-1 p-0 m-(-1) overflow-hidden .clip whitespace-nowrap border-0"
+          >{t}</label>
+          {t === "selection" && <LuMousePointer className="text-primary-text-color w-3 h-3"/>}
+          {t === "rectangle" && <FiSquare className="text-primary-text-color w-3 h-3" />}
+          {t === "line" && <PiMinusBold className="text-primary-text-color  w-3 h-3" />}
+          {t === "pencil" && <LuPencil className="text-primary-text-color  w-3 h-3" />}
+          {t === "text" && <IoText className="text-primary-text-color  w-3 h-3" />}
+
+          <span className="absolute top-[1.35rem] right-[0.35rem] text-[0.6rem] text-secondary-text-color">
+            {index + 1}
+          </span>
         </div>
       ))}
     </div>
