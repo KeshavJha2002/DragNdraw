@@ -15,7 +15,7 @@ DragNdraw, a React and TypeScript-powered drawing tool inspired by Excalidraw, b
 
 ## 🎨 Features
 
-Discover the capabilities of ArtistryCanvas:
+Discover the capabilities of DragNdraw:
 
 - **Diverse Tools**: Choose from pencils, lines, rectangles, and text tools to unleash your creativity.
 
@@ -39,7 +39,7 @@ Boost your productivity with these handy shortcuts:
 
 ## 👩‍🍳 The Journey
 
-Embark on the journey of creating ArtistryCanvas:
+Embark on the journey of creating DragNdraw:
 
 1. **Canvas Foundation**: Initiate the project by rendering a canvas with Rough.js, setting the stage for all drawings.
 
@@ -59,7 +59,7 @@ Embark on the journey of creating ArtistryCanvas:
 
 ## 📚 Key Takeaways
 
-ArtistryCanvas has been a platform for acquiring key skills and insights:
+DragNdraw has been a platform for acquiring key skills and insights:
 
 ### 🧠 `useHistory` Hook:
 
