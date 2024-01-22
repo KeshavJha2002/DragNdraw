@@ -38,6 +38,15 @@ export type ActionsType =
 export const Tools = {
   selection: "selection",
   rectangle: "rectangle",
+  // TODO
+  /*
+  ellipse: "ellipse",
+  diamond: "diamond",
+  eraser: "eraser",
+  cylinder: "cylinder",
+  laser_pointer: "laser_pointer",
+  insert_image: "insert_image"
+  */
   line: "line",
   pencil: "pencil",
   text: "text",
